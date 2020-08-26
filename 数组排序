@@ -1,0 +1,20 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, n, cur;
+     int a[6] = {10, 20, 30, 40, 50};
+     printf("Input an integer: ");
+     scanf("%d", &n);
+     for (i = 0; i < 6 - 1; i++)
+         if (a[i] > n)
+             break;
+     cur = i;
+     for (i = 6 - 2; i >= cur; i--)
+         a[i + 1] = a[i];
+     a[cur] = n;
+     for (i = 0; i < 6; i++)
+         printf("%5d", a[i]);
+     printf("\n");
+
+     return 0;
+ }
