@@ -1,0 +1,12 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, tmp, t[9];
+     printf("Please input 10 ingergers:\n ");
+     for (i = 0; i < 9; i++)
+         scanf("%d", &t[i]);
+     for (tmp = 8; tmp >= 0; tmp--)
+         printf("%2d", t[tmp]);
+     printf("\n");
+     return 0;
+ }
