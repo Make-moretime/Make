@@ -1,8 +1,8 @@
 #include<stdio.h>
 #define Max 100
-int num[Max];//*********************存储三个大数
-int val[Max];//*********************存储排序后的三个大数
-int End[Max];//*********************存储三个数相减的差
+int num[Max];
+int val[Max];
+int End[Max];
 int n,i;
  
 void init(int num[],int * n)
@@ -16,7 +16,6 @@ void init(int num[],int * n)
 		scanf("%d",&num[i]);
 	}
 }
-	//*******************************************辗转相除法求余数************************************************
 int qiuYushu(int a,int b)
 {
 	int r = a % b;
@@ -29,7 +28,6 @@ int qiuYushu(int a,int b)
 void function(int num[],int n)
 {
 	int i = 0,j = 0,k = 0;
-	//***********************************val中存储的是这几个大数做减法的差值************************************
 	for(i=0;i<n-1;i++)
 	{
 		for(j=i+1;j<n;j++)
@@ -42,7 +40,6 @@ void function(int num[],int n)
 			k++;
 		}
 	}
-	//*************求val[0]和val[1]求最大公约数，然后再对t和val[i](i>=2)求最大公约数，一直到最后一个，得出val数组中的最大公约数即为所求！***********
 	int t = qiuYushu(val[0],val[1]);
 	for(i=2;i<n;i++)
 	{
