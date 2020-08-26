@@ -1,0 +1,25 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, j, f;
+     double a[10], tmp;
+     printf("Input 10 numbers: ");
+     for (i = 0; i < 10; i++)
+         scanf("%lf",&a[i]);
+     for (i = 1; i < 10; i++) {
+         f = 0;
+         for (j = 0; j <10 ; j++)
+             if (a[j] < a[j+1]) {
+                 tmp = a[j+1];
+                 a[j+1] = a[j];
+                 a[j] = tmp;
+                 f = 1;
+             }
+         if (0 == f)
+             break;
+     }
+     for (i = 0; i < 10; i++)
+         printf("%6.1f", a[i]);
+     printf("\n");
+     return 0;
+ }
