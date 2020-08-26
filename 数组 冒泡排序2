@@ -7,16 +7,16 @@
      for (i = 0; i < 10; i++)
          scanf("%lf",&a[i]);
      for (i = 1; i < 10; i++) {
-         f = 0;  //假定第i次排序没交换数据。给f赋初值0
+         f = 0;  
          for (j = 0; j <10 - i; j++)
              if (a[j] > a[j+1]) {
                  tmp = a[j];
                  a[j] = a[j+1];
                  a[j+1] = tmp;
-                 f = 1; //当排序中交换了数据，给f赋值为1
+                 f = 1; 
              }
-         if ( 0 == f)  //当f为0，即第i次排序没交换数据
-             break;   //终止此次排序
+         if ( 0 == f)  
+             break;   
      }
      for (i = 0; i < 10; i++)
          printf("%6.1f", a[i]);
