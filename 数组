@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define N 5
+int main()
+{
+    int nums[] = { 8, 4, 2, 1, 23, 344, 12 };
+    int i;
+    int sum = 0;
+    double avg = 0;
+    int searchnum = 0;
+    printf("输出数组元素:\n");
+    for (i = 0; i < 7; i++)
+    {
+        printf("%d\n", nums[i]);
+    }
+    printf("\n******************\n");   
+    for (i = 0; i < 7; i++)
+    {
+        sum += nums[i];       
+    }
+    printf("数组的和为:%d \n", sum);
+    avg = sum / 7.0;
+    printf("数组的和平均值为:%.2lf\n", avg);
+    printf("请输入要查找的数字:");
+    scanf("%d", &searchnum);
+    for (i = 0; i < 7; i++)
+    {
+            if (searchnum == nums[i])
+            {
+            printf("猿粪啊,找到了相同的元素!\n");
+            break;
+            //else{
+            //  printf("没有找到!\n");
+            //
+        }
+    }
+       if (i == 7)
+      {
+        printf("茫茫人海,没有找到合适的数字!\n");
+      }
+}
