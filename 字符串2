@@ -3,7 +3,7 @@
  int main(void)
  {
      char strs[10][20];
-     char max[20];       //max充当交换数组
+     char max[20];       
      int i, n;
      printf("Input 10 character strings: \n");
      for( i = 0; i < 10; i++)
