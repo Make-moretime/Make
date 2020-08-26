@@ -1,0 +1,20 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, eq ;
+     double  x, t[10];
+     printf("Input 10 numbers: ");
+     for ( i = 0; i < 10; i++)
+         scanf("%lf", &t[i]);
+     printf("Input x: ");
+     scanf("%lf", &x);
+     for (i = 0; i < 10; i++)
+          if(t[i] == x) {
+             eq = i;
+             printf("%d\n", eq);
+          }
+     if (i > 9)
+          printf("-1\n");
+
+     return 0;
+ }
