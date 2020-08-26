@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+struct zb
+{
+	int x,y,z;
+}fx[2];
+int is_tri(zb a,zb b)
+{
+	int c=a.x*b.y+a.y*b.z+a.z*b.x;
+	int d=a.x*b.z+a.y*b.x+a.z*b.y;
+	return c-d;
+}
+int main()
+{
+	int i,x[4],y[4],kase;
+	while(~scanf("%d%d",&x[0],&y[0]))
+	{
+		for(i=1;i<3;++i)
+		{
+			scanf("%d%d",&x[i],&y[i]);
+		}
+		for(i=1;i<3;++i)
+		{
+			fx[i/2].x=x[i]-x[i-1];
+			fx[i/2].y=y[i]-y[i-1];
+			fx[i/2].z=0;
+		}
+		kase=is_tri(fx[0],fx[1]);
+		if(kase) 
+		{
+			if(kase>0)
+			{
+				printf("0\n");
+				continue;
+			}
+			printf("1\n");
+			continue;
+		}
+		return 0;
+	}
+	return 0;
+}  
