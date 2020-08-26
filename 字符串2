@@ -1,0 +1,21 @@
+ #include<stdio.h>
+ #include<string.h>
+ int main(void)
+ {
+     char strs[10][20];
+     char max[20];       //max充当交换数组
+     int i, n;
+     printf("Input 10 character strings: \n");
+     for( i = 0; i < 10; i++)
+         scanf("%s",strs[i]);
+     for( i = 0; i < 10; i++) {
+
+         n = strcmp(strs[i], strs[i+1]);
+         if(n > 0)
+             strcpy(max,strs[i]);
+         else
+             strcpy(max,strs[i+1]);
+     }
+     printf("max = %s\n", max);
+     return 0;
+ }
