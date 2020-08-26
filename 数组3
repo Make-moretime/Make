@@ -1,0 +1,16 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, j;
+     j = 0;
+     double min, t[10];
+     printf("Input 10 numbers: ");
+     for ( i = 0; i < 10; i++) {
+         scanf("%lf", &t[i]);
+         if (t[i] < t[j])
+             j = i;
+     }
+     min = 1.0 *t[j];
+     printf("%lf,%d\n", min, j);
+     return 0;
+ }
