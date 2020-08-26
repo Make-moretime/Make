@@ -1,0 +1,26 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, j, f, n;
+     int a[10] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90};
+     printf("Input an integer:");
+     scanf("%d", &n);
+     for (i = 0; i < 10; i++) {
+         if (a[i] == n) {
+             f = 1;
+             j = i;
+             break;
+         }
+     }
+     if (f == 1) {
+         for (i = j; i < 10; i++)
+             a[i] = a[i+1];
+         for (i = 0; i < 9; i++)
+             printf("%4d", a[i]);
+     }
+     else
+         printf("-1");
+
+     printf("\n");
+     return 0;
+ }
