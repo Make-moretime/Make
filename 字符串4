@@ -1,0 +1,28 @@
+ /*题目附加信息
+char s[80];
+int begin, len;
+gets(s);
+scanf("%d%d", &begin, &len);
+输入格式：
+How do you do?
+4 9
+输出格式：
+do you do*/
+ #include<stdio.h>
+ #include<string.h>
+ int main(void)
+ {
+     char s[80];
+     int begin, len;
+     printf("Input a character string: \n");
+     fgets(s, 80, stdin);
+     if ( strlen(s) != sizeof(s) - 1)
+     s[strlen(s) - 1] = '\0';
+     printf("Input position number and character lenth:\n");
+     scanf("%d%d", &begin, &len);
+     len += begin;
+     for(; begin < len; begin++)
+         printf("%c", s[begin]);
+     printf("\n");
+     return 0;
+ }
