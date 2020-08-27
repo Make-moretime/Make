@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int year,week;
+  scanf("%d %d",&year,&week);
+  int k=year<5?30:50;
+  float sum=k*(week>40?40:week);
+  sum+=(week>40?(week-40)*1.5*k:0);
+  printf("%.2f\n",sum);
+  return 0;
+}
