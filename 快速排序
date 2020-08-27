@@ -1,0 +1,91 @@
+#include<stdio.h>
+#include<string.h>    
+int a[1000001];     
+void kuaisu_sheng(int left,int right)
+{
+    if(left>=right)  
+        return ;
+    int i=left;     
+    int j=right;
+    int key=a[i];    
+    while(i<j)   
+    {
+        while(i<j&&key<=a[j])  
+            j--;    
+        a[i]=a[j];     
+        while(i<j&&key>=a[i])   
+            i++;
+        a[j]=a[i];
+    }
+    a[i]=key;                  
+    kuaisu_sheng(left,i-1);     
+    kuaisu_sheng(i+1,right);    
+                               
+}
+void kuaisu_jiang(int left,int right)
+{
+    if(left>=right)
+        return ;
+    int i=left;
+    int j=right;
+    int key=a[i]; 
+    while(i<j)  
+    {
+        while(i<j&&key>=a[j])   
+            j--;    
+        a[i]=a[j];    
+        while(i<j&&key<=a[i])    
+        i++;
+        a[j]=a[i];
+    }
+    a[i]=key;              
+    kuaisu_jiang(left,i-1);
+    kuaisu_jiang(i+1,right);
+}
+int main()
+{
+    int n,m,i,choice;
+    printf("快速排序小程序(By STY)\n\n");
+    printf("升序还是降序\n");
+    printf("升序选“1 ”\n");
+    printf("降序选“2 ”\n");
+    printf("请输入:(1~2)\n");
+    printf("退出请按“Ctrl+Z ”(在键盘上)，并按回车，谢谢使用！\n");
+    while(scanf("%d",&choice)!=EOF)
+    {
+        memset(a,0,sizeof(a));    
+        printf("请输入要排序的数字个数:\n");
+        scanf("%d",&n);
+        printf("请输入%d个数字:\n",n); 
+        if(choice==1)
+        {
+            for(int ii=0;ii<n;ii++)
+                scanf("%d",&a[ii]);
+            kuaisu_sheng(0,n);   
+            printf("结果：\n");
+            for(i=1;i<n;i++)     
+                printf("%d ",a[i]);
+            printf("%d(升序)\n\n\n\n",a[i]);
+        }
+        else if(choice==2)
+        {
+            for(int ii=0;ii<n;ii++)
+                scanf("%d",&a[ii]);
+            kuaisu_jiang(0,n);
+            printf("结果：\n");
+            for(i=0;i<n-1;i++)
+                printf("%d ",a[i]);
+            printf("%d(降序)\n\n\n\n",a[i]);
+        }
+        else
+            printf("开玩笑吧!\n");
+
+        printf("快速排序小程序(By STY)\n\n");
+        printf("升序还是降序\n");
+        printf("升序选“1”\n");
+        printf("降序选“2”\n");
+        printf("请输入:(1~2)\n");
+        printf("退出请按“Ctrl+Z”(在键盘上)，并按回车，谢谢使用！\n");      
+    }
+    return 0;   
+}
