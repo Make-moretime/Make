@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int cm;
+  scanf("%d",&cm);
+  float x=cm/0.3048/100;
+  float a=(x-(int)x)*12.0;
+  int b=(int)x;
+  printf("%d %d\n",b,(int)a);
+  return 0;
+}
