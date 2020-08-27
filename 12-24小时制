@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int hour,min;
+  scanf("%d:%d",&hour,&min);
+  if(hour<12)
+    printf("%d:%d AM\n",hour,min);
+  else if(hour==12)
+    printf("12:%d PM\n",min);
+  else
+    printf("%d:%d PM\n",hour-12,min);
+  return 0;
+}
