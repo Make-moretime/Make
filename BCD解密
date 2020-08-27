@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int num;
+  scanf("%d",&num);
+  int cnt=0,i=1;
+  while(num)
+  {
+    cnt+=i*(num%16);
+    i*=10;
+    num/=16;
+  }
+  printf("%d\n",cnt);
+  return 0;
+}
