@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+int main(int argc,char** argv)
+{
+  	int N,K;
+  	scanf("%d%d",&N,&K);
+  	int i,j,book[105];
+  	for(i=1;i<=N;i++)
+  		book[i]=i;
+  	char dig[105][15];
+  	for(i=1;i<=N;i++)
+  		scanf("%s",dig[i]);
+  	for(i=0;i<K;i++)
+  		for(j=1;j<=N-1-i;j++)
+  			if(strcmp(dig[book[j]],dig[book[j+1]])>0)
+  			{
+  				int keep=book[j];
+  				book[j]=book[j+1];
+  				book[j+1]=keep;
+			}
+	for(i=1;i<=N;i++)
+		printf("%s\n",dig[book[i]]);
+  	return 0;
+}
