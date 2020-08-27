@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int a,b;
+  scanf("%d%d",&a,&b);
+  int hour1,hour2,min1,min2;
+  hour1=a/100,hour2=b/60;
+  min1=a%100,min2=b%60;
+  int hour=hour1+hour2;
+  int min=min1+min2;
+  if(min>=60)
+    hour++,min-=60;
+  if(min<0)
+    hour--,min+=60;
+  printf("%d%02d\n",hour,min);
+  return 0;
+}
