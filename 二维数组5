@@ -1,0 +1,17 @@
+ #include<stdio.h>
+ int main(void)
+ {
+     int i, j;
+     double sum, t[3][3];
+     sum = 0;
+     printf("Input 9 numbers:\n");
+     for (i = 0; i <3; i++) {
+         for (j = 0; j < 3; j++)
+         scanf("%lf", &t[i][j]);
+     }
+     for ( i = 0; i <3; i++) {
+         sum += t[i][i];
+     }
+     printf("sum = %lf\n", sum);
+     return 0;
+ }
