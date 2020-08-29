@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int num1,num2;
+  char sf;
+  scanf("%d %c %d",&num1,&sf,&num2);
+  int result;
+  if(sf=='+')
+    result=num1+num2;
+  else if(sf=='-')
+    result=num1-num2;
+  else if(sf=='*')
+    result=num1*num2;
+  else if(sf=='/')
+    result=num1/num2;
+  else if(sf=='%')
+    result=num1%num2;
+  else
+  {
+    printf("ERROR\n");
+    return 0;
+  }
+  printf("%d\n",result);
+  return 0;
+}
