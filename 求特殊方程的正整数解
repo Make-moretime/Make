@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main(int argc,char** argv)
+{
+  	int N;
+  	scanf("%d",&N);
+  	int x=N/2,k=0;
+  	double i,j;
+  	for(i=1;i<=sqrt(x);i++)
+  		for(j=i;j<sqrt(N);j++)
+  			if(i*i+j*j==N)
+  			{
+  				printf("%.0lf %.0lf\n",i,j);
+  				k++;
+			}
+	if(!k)
+		printf("No Solution\n");
+  	return 0;
+}
