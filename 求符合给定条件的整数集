@@ -1,0 +1,38 @@
+#include<stdio.h>
+int dig[4],book[5];
+int k=0;
+void func(int num,int now)
+{
+	if(now==4)
+	{
+		int i;
+		for(i=1;i<=3;i++)
+		{
+			printf("%d",dig[i]);
+		}
+		k=(k+1)%6;
+		if(k%6)
+			putchar(' ');
+		else
+			putchar('\n');
+		return;
+	}
+	int i;
+	for(i=num;i<=num+3;i++)
+	{
+		if(!book[i])
+		{
+			book[i]++;
+			dig[now]=i;
+			func(num,now+1);
+			book[i]=0;
+		}
+	}
+}
+int main(int argc,char** argv)
+{
+  int num;
+  scanf("%d",&num);
+  func(num,1);
+  return 0;
+}
