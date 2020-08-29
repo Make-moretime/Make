@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  float x;
+  scanf("%f",&x);
+  float y=(x<=15?x*4/3:2.5*x-17.5);
+  printf("%.2f\n",y);
+  return 0;
+}
