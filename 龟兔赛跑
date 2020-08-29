@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main(int argc,char** argv)
+{
+  	int N;
+  	scanf("%d",&N);
+  	int wugui=0,tuzi=0;
+  	int time,xtime=0;
+	for(time=1;time<=N;time++)
+	{
+		if(!xtime)
+			tuzi+=9;
+		if(xtime)
+			xtime--;
+		if(time%10==0&&!xtime&&tuzi>wugui)
+			xtime=30; 
+		wugui+=3;
+	}
+	if(tuzi>wugui)
+		printf("^_^ %d\n",tuzi);
+	if(tuzi<wugui)
+		printf("@_@ %d\n",wugui);
+	if(tuzi==wugui)
+		printf("-_- %d\n",tuzi);
+  	return 0;
+}
