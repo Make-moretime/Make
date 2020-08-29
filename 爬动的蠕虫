@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int N,U,D;
+  scanf("%d%d%d",&N,&U,&D);
+  int floor=0,time=0;
+  while(floor<N)
+  {
+    floor+=U,time++;
+    if(floor>=N)
+      break;
+    floor-=D,time++;
+  }
+  printf("%d\n",time);
+  return 0;
+}
