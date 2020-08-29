@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int N;
+	scanf("%d",&N);
+ 	int i;
+  float Y;
+  for(i=0;i<=99;i++)
+  {
+  	Y=(98.0*i-N)/199.0;
+  	if(!(Y-(int)Y))
+  		break;
+ 	}
+  if(i==100)
+		printf("No Solution\n");
+	else
+		printf("%d.%d\n",(int)Y,i);
+	return 0;
+}
