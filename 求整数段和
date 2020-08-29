@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  int a,b;
+  scanf("%d%d",&a,&b);
+  int i=1,sum=0;
+  while(a<=b)
+  {
+    sum+=a;
+    printf("%5d",a++);
+    if(!(i%5)&&a<=b)
+      printf("\n");
+    i++;
+  }
+  printf("\nSum = %d\n",sum);
+  return 0;
+}
