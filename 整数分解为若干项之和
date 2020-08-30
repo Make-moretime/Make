@@ -1,0 +1,35 @@
+#include<stdio.h>
+int book[35];
+int nowsum,cnt,ind;
+void dfs(int sum,int m)
+{
+	int i;
+	if(sum==nowsum)
+	{
+		printf("%d=%d",sum,book[1]);
+        for(i=2;i<ind;i++)
+			printf("+%d",book[i]);
+        if(ind==2||cnt%4==0)
+    		putchar('\n');
+        else
+			putchar(';');
+		cnt++;
+        return;
+	}
+	for(i=m;i<=sum-nowsum;i++)
+	{
+		nowsum+=i;
+		book[ind++]=i;
+		dfs(sum,i);
+		ind--;
+		nowsum-=i;
+	}
+}
+int main(int argc,char** argv)
+{
+	int sum;
+	ind=cnt=1;
+	scanf("%d",&sum);
+	dfs(sum,1);
+	return 0;
+}
