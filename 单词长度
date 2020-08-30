@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(int argc,char** argv)
+{
+  char ch;
+  int chlen=0,first=0;
+  while(scanf("%c",&ch),ch!='.')
+  {
+  	if(ch!=' ')
+  		chlen++;
+  	else if(chlen)
+  	{
+  	  if(!first)
+  	  {
+  		  printf("%d",chlen);
+  	    first=1;
+  	  }
+  	  else
+  	    printf(" %d",chlen);
+  		chlen=0;
+		}
+	}
+	if(chlen)
+	{
+		if(!first)
+		  printf("%d",chlen);
+  	else
+      printf(" %d",chlen);
+	}
+  return 0;
+}
